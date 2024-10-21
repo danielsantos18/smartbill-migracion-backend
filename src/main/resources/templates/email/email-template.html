@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Restablecer Contraseña - SmartBill</title>
+    <style>
+        /* GLOBAL RESETS */
+        body, table, td, a {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            color: #333333;
+        }
+
+        img {
+            max-width: 100%;
+            border: none;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 150px; /* Ajusta según tu logo */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent; /* Borde transparente por defecto */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3; /* Borde al pasar el ratón */
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #1D72B8;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img th:src="@{mc.jpg}" alt="SmartBill Logo"/>
+    </div>
+    <h1>Restablecimiento de Contraseña</h1>
+    <p>Hola <strong th:text="${user}"></strong>,</p>
+    <p>Recibimos una solicitud para restablecer tu contraseña en <strong>SmartBill</strong>.</p>
+    <p>Si no realizaste esta solicitud, simplemente puedes ignorar este correo. De lo contrario, haz clic en el botón a
+        continuación para restablecer tu contraseña.</p>
+
+    <p>
+        <a th:href="${resetUrl}" class="btn-primary">Restablecer Contraseña</a>
+    </p>
+
+    <p>Si tienes algún problema, también puedes copiar y pegar la siguiente URL en tu navegador:</p>
+    <p><strong th:text="${resetUrl}"></strong></p>
+
+    <p>¡Gracias por usar SmartBill!</p>
+
+    <p>Atentamente,<br>El equipo de SmartBill</p>
+
+    <!-- Línea del adjunto de ejemplo -->
+    <p><strong>Adjunto:</strong> Te hemos enviado una copia de tu última factura en este correo. Por favor, revisa el
+        archivo adjunto (factura.txt).</p>
+
+    <div class="contact-info">
+        <p>Si necesitas ayuda, no dudes en contactarnos: <a href="mailto:support@smartbill.com.co">support@smartbill.com.co</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 SmartBill - Todos los derechos reservados.</p>
+        <p>Colombia, Cartagena</p>
+        <p><a href="https://www.smartbill.com.co/">Visítanos</a></p>
+    </div>
+</div>
+</body>
+</html>
